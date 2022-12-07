@@ -106,7 +106,7 @@ void Menu::calculaAngulo()
          << "Massa: " << massaBloco  << " kg" << endl
          << "Tamanho do braco movel: " << tamBracoMovel << " m" << endl
          //<< "Angulo: " << anguloBraco << " graus" << endl
-         << "Momento em A: " << massaBloco << " N*m" << endl << endl;
+         << "Momento em A: " << momentoA << " N*m" << endl << endl;
          
     anguloBraco = acos(momentoA/((tamBracoFixo-distA+tamBracoMovel)*(massaBloco*GRAVIDADE))) * 180/PI;
 
@@ -134,7 +134,7 @@ void Menu::calculaBracoMovel()
          << "Massa: " << massaBloco  << " kg" << endl
          //<< "Tamanho do braco movel: " << tamBracoMovel << " m" << endl
          << "Angulo: " << anguloBraco << " graus" << endl
-         << "Momento em A: " << massaBloco << " N*m" << endl << endl;
+         << "Momento em A: " << momentoA << " N*m" << endl << endl;
 
     tamBracoMovel = momentoA/((massaBloco*GRAVIDADE)*cos(anguloBraco*PI/180)) - (tamBracoFixo-distA);
 
@@ -148,7 +148,7 @@ void Menu::calculaMassa()
          //<< "Massa: " << massaBloco  << " kg" << endl
          << "Tamanho do braco movel: " << tamBracoMovel << " m" << endl
          << "Angulo: " << anguloBraco << " graus" << endl
-         << "Momento em A: " << massaBloco << " N*m" << endl << endl;
+         << "Momento em A: " << momentoA << " N*m" << endl << endl;
 
     massaBloco = momentoA/((tamBracoFixo-distA+tamBracoMovel)*cos(anguloBraco*PI/180)*GRAVIDADE);
     
